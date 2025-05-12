@@ -9,13 +9,14 @@ export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
     <View style={{ flex: 1 }} >
+    <StatusBar style="light"/>
     <ImageBackground 
     source = {imgFondo}
     resizeMode='cover'
     style = {styles.backgroundImage}
     >
       <Card
-      
+
       />
 
     </ImageBackground>
