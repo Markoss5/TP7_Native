@@ -3,25 +3,25 @@ import {
   View,
   Text,
   Image,
-  ImageBackground,
   TextInput,
   TouchableOpacity,
+  Pressable,
 } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { Alert } from "react-native";
-import { Pressable } from "react-native";
-import { useState } from "react";
 
 const Foto_Perfil = require("../assets/Foto_Perfil.jpg");
 
 export default function Card() {
   const [nombre, handleNombreChange] = React.useState("");
-  const [isPressed, setIsPressed] = useState(false);
+  const [backgroundColor, setBackgroundColor] = useState("rgba(255, 255, 255, 0.71)");
+
+  const handlePress = () => {
+    setBackgroundColor("rgba(0, 143, 57, 0.71)"); 
+  };
 
   return (
-    <View style={styles.View}>
+    <View style={[styles.View, { backgroundColor }]}>
       <Image source={Foto_Perfil} style={styles.Image}></Image>
       <Text style={styles.titleText}>Marco Di Carlo</Text>
       <Text style={styles.subtitleText}>
@@ -39,8 +39,12 @@ export default function Card() {
       >
         <Text style={styles.buttonText}>Contactar</Text>
       </TouchableOpacity>
-      <Pressable onPress={handlePress}>
-      <Text>Ver Portfolio</Text>
+
+      <Pressable
+        style={styles.button}
+        onPress={handlePress} 
+      >
+        <Text style={styles.buttonText}>Ver Portfolio</Text>
       </Pressable>
     </View>
   );
@@ -48,7 +52,6 @@ export default function Card() {
 
 const styles = StyleSheet.create({
   View: {
-    backgroundColor: "rgba(255, 255, 255, 0.71)",
     width: "75%",
     marginLeft: "12.5%",
     borderRadius: 10,
@@ -102,6 +105,7 @@ const styles = StyleSheet.create({
     width: "90%",
     marginLeft: "5%",
     borderColor: "020000",
+    marginTop: "1%",
   },
 
   buttonText: {
