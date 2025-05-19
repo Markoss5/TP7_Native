@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import HomeScreen from './Components/HomeScreen';
 import { SafeAreaView } from 'react-native';
 import Card from './Components/Card';
+import {Pressable} from 'react-native';
 const imgFondo = require('./assets/FondoPantalla.jpg')
 
 export default function App() {

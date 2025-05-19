@@ -39,8 +39,8 @@ export default function Card() {
       >
         <Text style={styles.buttonText}>Contactar</Text>
       </TouchableOpacity>
-      <Pressable>
-
+      <Pressable onPress={handlePress}>
+      <Text>Ver Portfolio</Text>
       </Pressable>
     </View>
   );
